@@ -1,0 +1,17 @@
+winlogbeat:
+  registry_file: C:/ProgramData/winlogbeat/.winlogbeat.yml
+
+  event_logs:
+    - name: Application
+    - name: Security
+    - name: System
+
+output:
+  logstash:
+    hosts: ["10.20.20.18:5044"]
+
+logging:
+  to_files: true
+  files:
+    path: C:/ProgramData/winlogbeat/Logs
+  level: info
