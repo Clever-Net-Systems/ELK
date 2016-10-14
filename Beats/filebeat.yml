@@ -1,0 +1,11 @@
+filebeat:
+    prospectors:
+        -
+            paths:
+                - "/var/log/apache2/*.log" 
+            scan_frequency: '10s'
+            document_type: apache
+                
+output:
+    logstash:
+        hosts: ["192.168.1.5:5193"]
